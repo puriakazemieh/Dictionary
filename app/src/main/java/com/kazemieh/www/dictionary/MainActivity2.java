@@ -29,6 +29,12 @@ public class MainActivity2 extends AppCompatActivity {
         final Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             id = bundle.getInt("id");
+            if (id==-1){
+
+                tv_en.setText("منابع");
+                tv_fa.setText("اطلاعات از این سایت برداشته شده است" +
+                        "bigdata-ir.com");
+            }
             Cursor cursor = dataBaseOpenHelper.getWritableDatabase().rawQuery("select * from dictionary where id =" + id, null);
             while (cursor.moveToNext()) {
                 String en = cursor.getString(cursor.getColumnIndex("en"));

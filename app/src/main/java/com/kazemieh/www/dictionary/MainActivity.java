@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     public List<DataModel> showlistbysql() {
         List<DataModel> dataModels = new ArrayList<>();
+        dataModels.add(new DataModel("منابع", "",-1));
         //  select *from dictionary where fav = '1'
         Cursor cursor = dataBaseOpenHelper.getWritableDatabase().rawQuery("select * from dictionary ", null);
         while (cursor.moveToNext()) {
